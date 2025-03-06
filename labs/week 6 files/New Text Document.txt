@@ -1,0 +1,20 @@
+Lab Notebooks (see videos below)
+
+All Notebooks use the same data set.
+
+Data set --- >>> adult.csv
+
+Demo Lab Notebook 1	--- >>> TU257-Lab6-Demo-1-Models(2).ipynb
+
+Demo Lab Notebook 2 - Complete this notebook using the Algorithms from last week --->> TU257-Lab6-Demo-2-ROC.ipynb
+
+Demo Lab Notebook 3 ---- >> TU257-Lab6-Demo-3-KFold.ipynb
+
+After completing these notebooks and tasks, select another data set (see below for links to data sets), load this data set into a notebook and repeat the tasks for this new data set.	
+
+
+Python Libraries needed for this week
+
+No additional libraries are required.
+
+Ensure all libraries required for previous weeks are installed.
