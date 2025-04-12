@@ -1,0 +1,30 @@
+Let’s setup our data set and visualize it.
+
+import numpy as np
+import pandas as pd
+import math
+import matplotlib.pyplot as plt
+import matplotlib
+
+#initialize the random seed
+np.random.seed(42) #it is the answer to everything!
+
+#Create a function to create our data points in a circular format
+#We will call this function below, to create our dataframe
+def CreateDataPoints(r, n):
+    return [(math.cos(2*math.pi/n*x)*r+np.random.normal(-30,30),math.sin(2*math.pi/n*x)*r+np.random.normal(-30,30)) for x in range(1,n+1)]
+
+#Use the function to create different sets of data, each having a circular format
+df=pd.DataFrame(CreateDataPoints(800,1500))  #500, 1000
+df=df.append(CreateDataPoints(500,850))      #300, 700
+df=df.append(CreateDataPoints(200,450))      #100, 300
+
+# Adding noise to the dataset
+df=df.append([(np.random.randint(-850,850),np.random.randint(-850,850)) for i in range(450)])
+
+plt.figure(figsize=(8,8))
+plt.scatter(df[0],df[1],s=15,color='olive')
+plt.title('Dataset for DBScan Clustering',fontsize=16)
+plt.xlabel('Feature-1',fontsize=12)
+plt.ylabel('Feature-2',fontsize=12)
+plt.show()

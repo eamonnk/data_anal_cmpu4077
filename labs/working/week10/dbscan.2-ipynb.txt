@@ -1,0 +1,19 @@
+Let’s use the DBScan algorithm, using the default setting, to see what it discovers.
+
+from sklearn.cluster import DBSCAN
+#DBSCAN without any parameter optimization and see the results.
+dbscan=DBSCAN()
+dbscan.fit(df[[0,1]])
+
+df['DBSCAN_labels']=dbscan.labels_ 
+
+# Plotting resulting clusters
+colors=['purple','red','blue','green']
+plt.figure(figsize=(8,8))
+plt.scatter(df[0],df[1],c=df['DBSCAN_labels'],cmap=matplotlib.colors.ListedColormap(colors),s=15)
+plt.title('DBSCAN Clustering',fontsize=16)
+plt.xlabel('Feature-1',fontsize=12)
+plt.ylabel('Feature-2',fontsize=12)
+plt.show()
+#Not very useful !
+#Everything belongs to one cluster. 
